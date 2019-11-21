@@ -92,18 +92,18 @@ namespace Chapter1
             long mIntValue = 0;
             for (int i = 0; i < mCharArray.Length; i++)
             {
-                mIntValue += Convert.ToInt64(Math.Pow(map1[mCharArray[i]], i));
+                mIntValue += Convert.ToInt64(map1[mCharArray[i]] * Math.Pow(m, i));
             }
 
             //将10进制数转为n进制数
 
-            long quotient = 1;
+            long quotient = mIntValue;
             List<char> charList = new List<char>();
             while (quotient != 0)
             {
-                long remainder = mIntValue % n;
+                long remainder = quotient % n;
                 charList.Add(map2[remainder]);
-                quotient = mIntValue / n;
+                quotient = quotient / n;
             }
             char[] aaaa = charList.ToArray();
             Array.Reverse(aaaa);
