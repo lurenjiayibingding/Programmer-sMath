@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ljigu\\.nuget\\packages\\": {},
+    "C:\\Users\\EDZ\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyProject\\Programmer‘sMath\\Chapter1\\Chapter1.csproj",
+      "projectUniqueName": "D:\\GitHub\\Programmer'sMath\\Chapter1\\Chapter1.csproj",
       "projectName": "Chapter1",
-      "projectPath": "D:\\MyProject\\Programmer‘sMath\\Chapter1\\Chapter1.csproj",
-      "packagesPath": "C:\\Users\\ljigu\\.nuget\\packages\\",
-      "outputPath": "D:\\MyProject\\Programmer‘sMath\\Chapter1\\obj\\",
+      "projectPath": "D:\\GitHub\\Programmer'sMath\\Chapter1\\Chapter1.csproj",
+      "packagesPath": "C:\\Users\\EDZ\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub\\Programmer'sMath\\Chapter1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ljigu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\EDZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

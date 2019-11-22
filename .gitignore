@@ -17,3 +17,4 @@
 /Chapter1/bin/Debug/netcoreapp3.0/Chapter1.exe
 /Chapter1/bin/Debug/netcoreapp3.0/Chapter1.dll
 /Chapter1/bin/Debug/netcoreapp3.0/Chapter1.deps.json
+*.suo
