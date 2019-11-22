@@ -5,6 +5,9 @@ namespace Chapter1
 {
     class Program
     {
+        /// <summary>
+        /// 字符-值对应字典
+        /// </summary>
         private static readonly Dictionary<char, long> dicCharToValue = new Dictionary<char, long>()
         {
             {'0',0},
@@ -28,7 +31,9 @@ namespace Chapter1
             {'I',18},
             {'J',19}
         };
-
+        /// <summary>
+        /// 值-字符对应字典
+        /// </summary>
         private static readonly Dictionary<long, char> dicValueToChar = new Dictionary<long, char>()
         {
             {0,'0'},
@@ -80,11 +85,11 @@ namespace Chapter1
         }
 
         /// <summary>
-        /// 
+        /// 将m进制数转为n进制数
         /// </summary>
-        /// <param name="m"></param>
-        /// <param name="mValue"></param>
-        /// <param name="n"></param>
+        /// <param name="m">需要被转换的进制</param>
+        /// <param name="mValue">需要被转换的数值</param>
+        /// <param name="n">转换为的进制</param>
         /// <returns></returns>
         static string ConvertMToN(int m, string mValue, int n)
         {
