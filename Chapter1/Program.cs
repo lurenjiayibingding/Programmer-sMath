@@ -66,6 +66,7 @@ namespace Chapter1
             Console.WriteLine($"计算结果:{ConvertMToN(m, mValue, n)}");
 
             Console.WriteLine("计算结束");
+            Console.ReadKey();
         }
 
         /// <summary>
