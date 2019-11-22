@@ -5,7 +5,7 @@ namespace Chapter1
 {
     class Program
     {
-        private static readonly Dictionary<char, long> map1 = new Dictionary<char, long>()
+        private static readonly Dictionary<char, long> dicCharToValue = new Dictionary<char, long>()
         {
             {'0',0},
             {'1',1},
@@ -29,7 +29,7 @@ namespace Chapter1
             {'J',19}
         };
 
-        private static readonly Dictionary<long, char> map2 = new Dictionary<long, char>()
+        private static readonly Dictionary<long, char> dicValueToChar = new Dictionary<long, char>()
         {
             {0,'0'},
             {1,'1'},
@@ -53,7 +53,10 @@ namespace Chapter1
             {19,'J'}
         };
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.WriteLine("请输入M:");
@@ -63,9 +66,17 @@ namespace Chapter1
             Console.WriteLine("请输入N:");
             int n = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine($"计算结果:{ConvertMToN(m, mValue, n)}");
+            try
+            {
+                Console.WriteLine($"计算结果:{ConvertMToN(m, mValue, n)}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"发生异常:{ex.Message}");
+            }
 
             Console.WriteLine("计算结束");
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -77,13 +88,17 @@ namespace Chapter1
         /// <returns></returns>
         static string ConvertMToN(int m, string mValue, int n)
         {
-            if (m == n)
+            if (m == 1 || n == 1)
             {
-                return mValue;
+                throw new Exception("不存在1进制数");
             }
             if (m > 20 || n > 20)
             {
                 throw new Exception("最大只能进行20进制内的数据转换");
+            }
+            if (m == n)
+            {
+                return mValue;
             }
 
             //将m进制数转为10进制数
@@ -92,7 +107,12 @@ namespace Chapter1
             long mIntValue = 0;
             for (int i = 0; i < mCharArray.Length; i++)
             {
-                mIntValue += Convert.ToInt64(map1[mCharArray[i]] * Math.Pow(m, i));
+                long currentValue = dicCharToValue[char.ToUpper(mCharArray[i])];
+                if (currentValue >= m)
+                {
+                    throw new Exception($"{m}进制数只能由0~{m - 1}中的数字表示");
+                }
+                mIntValue += Convert.ToInt64(currentValue * Math.Pow(m, i));
             }
 
             //将10进制数转为n进制数
@@ -102,12 +122,12 @@ namespace Chapter1
             while (quotient != 0)
             {
                 long remainder = quotient % n;
-                charList.Add(map2[remainder]);
+                charList.Add(dicValueToChar[remainder]);
                 quotient = quotient / n;
             }
-            char[] aaaa = charList.ToArray();
-            Array.Reverse(aaaa);
-            return new string(aaaa);
+            char[] charArray = charList.ToArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
         }
     }
 }
